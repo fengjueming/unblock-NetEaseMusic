@@ -27,4 +27,4 @@ iPhone:</br>
 设置>WIFI，选择连接中的WiFi右边的按钮，在设置最下面选择自动，并填入以下字段</br>
 http://ming.moe/163.pac
 
-有任何使用上的问题及其他需求，请联系fengjueming#gmail.com
+有任何使用上的问题及其他需求，请联系fengjueming[at]gmail.com
