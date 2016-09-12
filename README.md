@@ -2,7 +2,7 @@ UnblockNeteastMusic
 
 海外网易云音乐代理
 
-目前本服务运行于日本Cloudcore服务器，国内节点为腾讯云广州。
+目前本服务运行于日本Cloudcore服务器，国内节点为移动。
 
 服务器信息</br>
 158.199.142.239 music.163.com
