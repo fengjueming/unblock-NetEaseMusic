@@ -23,9 +23,11 @@ Mac:</br>
 
 iPhone:</br>
 设置>WIFI，选择连接中的WiFi右边的按钮，在设置最下面选择自动，并填入以下字段</br>
-http://ming.moe/163.pac
+http://ming.moe/163.pac</br>
+如果需要于Cellular下使用，请购买shadowrocket并导入配置文件。</br>
 
 有任何使用上的问题及其他需求，请联系fengjueming[at]gmail.com
 
 更新：</br>
+1.5 增加shadowrocket配置文件</br>
 12.13 国内节点更换为景安，封面缓存也走服务器中转
