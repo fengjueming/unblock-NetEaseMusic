@@ -1,14 +1,14 @@
-#UnblockNeteastMusic 海外网易云音乐代理
+# UnblockNeteastMusic 海外网易云音乐代理
 
 目前本服务运行于日本Cloudcore服务器，国内节点为移动。
 
-####服务器信息</br>
+#### 服务器信息</br>
 > 158.199.142.239 music.163.com
 
 iOS PAC</br>
 > http://ming.moe/163.pac
 
-####使用方法
+#### 使用方法
 
 Windows:
 打开命令提示符（管理员权限），执行该命令
@@ -26,7 +26,7 @@ http://ming.moe/163.pac</br>
 
 有任何使用上的问题及其他需求，请联系fengjueming[at]gmail.com
 
-####更新：</br>
+#### 更新：</br>
 5.31 优化日本节点，更换国内节点
 1.5 增加shadowrocket配置文件</br>
 12.13 国内节点更换为景安，封面缓存也走服务器中转
