@@ -1,4 +1,4 @@
-# UnblockNeteastMusic 海外网易云音乐代理
+# UnblockNetEaseMusic 海外网易云音乐代理
 
 目前本服务运行于日本Cloudcore服务器，国内节点为移动。
 
