@@ -6,7 +6,7 @@
 `158.199.142.239 music.163.com`
 
 ~~iOS PAC</br>
-`http://ming.moe/163.pac`
+`http://ming.moe/163.pac`~~
 
 #### 使用方法
 
@@ -23,4 +23,14 @@ iPhone:</br>
 ~~设置>WIFI，选择连接中的WiFi右边的按钮，在设置最下面选择自动，并填入以下字段</br>
 http://ming.moe/163.pac</br>
 如果需要于Cellular下使用，请购买shadowrocket并导入配置文件。</br>~~
-*现在iOS的客户端处理方式变得极为复杂，而且高度依赖HTTPS协议，在没有找到更好的解决方法之前建议使用Mac客户端*
+~~现在iOS的客户端处理方式变得极为复杂，而且高度依赖HTTPS协议，在没有找到更好的解决方法之前建议使用Mac客户端~~
+找到一个解决方法，需要Surge等软件配合。</br>
+[Proxy]</br>
+CloudMusic = http, 158.199.142.239, 80,,</br>
+[Rule]</br>
+USER-AGENT,NeteaseMusic*,CloudMusic</br>
+[Host] #非必须，但建议加上，有助于图片加载</br>
+p1.music.126.net = 158.199.142.239</br>
+p2.music.126.net = 158.199.142.239</br>
+p3.music.126.net = 158.199.142.239</br>
+p4.music.126.net = 158.199.142.239</br>
