@@ -10,14 +10,16 @@
 
 #### 使用方法
 
-Windows:
+Windows:(不保证能用)
 打开命令提示符（管理员权限），执行该命令
 
-`echo 158.199.142.239 music.163.com interface.music.163.com p1.music.126.net p2.music.126.net p3.music.126.net p4.music.126.net >> C:\WINDOWS\System32\drivers\etc\hosts`
+`echo 158.199.142.239 music.163.com >> C:\WINDOWS\System32\drivers\etc\hosts`
 
 Mac:</br>
 打开终端，sudo vi /etc/hosts ，然后将以下添加进文件末尾</br>
-`158.199.142.239 music.163.com interface.music.163.com p1.music.126.net p2.music.126.net p3.music.126.net p4.music.126.net`
+`158.199.142.239 music.163.com`
+
+Mac的客户端现在除了API都会优先请求HTTPS，所以请自行把p*.music.126.net去掉
 
 iPhone:</br>
 ~~设置>WIFI，选择连接中的WiFi右边的按钮，在设置最下面选择自动，并填入以下字段</br>
@@ -29,8 +31,10 @@ http://ming.moe/163.pac</br>
 CloudMusic = http, 158.199.142.239, 80,,</br>
 [Rule]</br>
 USER-AGENT,NeteaseMusic*,CloudMusic</br>
-[Host] #非必须，但建议加上，有助于图片加载</br>
+~~[Host] #非必须，但建议加上，有助于图片加载</br>
 p1.music.126.net = 158.199.142.239</br>
 p2.music.126.net = 158.199.142.239</br>
 p3.music.126.net = 158.199.142.239</br>
-p4.music.126.net = 158.199.142.239</br>
+p4.music.126.net = 158.199.142.239</br>~~
+
+
