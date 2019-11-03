@@ -1,40 +1,49 @@
 # UnblockNetEaseMusic 海外网易云音乐代理
 
-目前本服务运行于日本Cloudcore服务器
-
 #### 服务器信息</br>
-`158.199.142.239 music.163.com`
-
-~~iOS PAC</br>
-`http://ming.moe/163.pac`~~
+    158.199.142.239 music.163.com
 
 #### 使用方法
 
 Windows:(不保证能用)
 打开命令提示符（管理员权限），执行该命令
 
-`echo 158.199.142.239 music.163.com >> C:\WINDOWS\System32\drivers\etc\hosts`
+    echo 158.199.142.239 music.163.com >> C:\WINDOWS\System32\drivers\etc\hosts
 
 Mac:</br>
 打开终端，sudo vi /etc/hosts ，然后将以下添加进文件末尾</br>
-`158.199.142.239 music.163.com`
+    158.199.142.239 music.163.com
 
-Mac的客户端现在除了API都会优先请求HTTPS，所以请自行把p*.music.126.net去掉
+#### 实现原理
 
-iPhone:</br>
-~~设置>WIFI，选择连接中的WiFi右边的按钮，在设置最下面选择自动，并填入以下字段</br>
-http://ming.moe/163.pac</br>
-如果需要于Cellular下使用，请购买shadowrocket并导入配置文件。</br>~~
-~~现在iOS的客户端处理方式变得极为复杂，而且高度依赖HTTPS协议，在没有找到更好的解决方法之前建议使用Mac客户端~~
-找到一个解决方法，需要Surge等软件配合。</br>
-[Proxy]</br>
-CloudMusic = http, 158.199.142.239, 80,,</br>
-[Rule]</br>
-USER-AGENT,NeteaseMusic*,CloudMusic</br>
-~~[Host] #非必须，但建议加上，有助于图片加载</br>
-p1.music.126.net = 158.199.142.239</br>
-p2.music.126.net = 158.199.142.239</br>
-p3.music.126.net = 158.199.142.239</br>
-p4.music.126.net = 158.199.142.239</br>~~
+服务器上通过Nginx修改数据头部以被服务器认为国内IP，因为TLS的验证问题，遂无法在不安装证书的情况下提供代理服务。虽然可以通过SNIPROXY实现，但要一个国内IP开放80/443端口的难度我觉得太大了。
+Nginx配置文件：
 
+    server {
+        listen 80;
+        listen 443;
+        server_name music.163.com;
+    
+        location / {
+            proxy_pass https://music.163.com;
+        }
+    
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP #这里填入任意一个可用国内IP#;
+        proxy_set_header X-Forwarded-For #这里填入任意一个可用国内IP#;  
+    }
 
+#### 备注
+如果你有一个位于国内的代理服务器，可以解决iOS设备上的网易云音乐/MOO音乐的区域限制。
+
+    //Netease  
+    USER-AGENT,NeteaseMusic*,China  
+    USER-AGENT,%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90*,China  
+    DOMAIN-SUFFIX,music.126.net,China  
+    DOMAIN-SUFFIX,music.163.com,China  
+    //Tencent  
+    USER-AGENT,MOO%E9%9F%B3%E4%B9%90*,China  
+    USER-AGENT,QQ%E9%9F%B3%E4%B9%90,China  
+    DOMAIN-SUFFIX,qqmusic.qq.com,China  
+    DOMAIN-SUFFIX,y.qq.com,China  
+    DOMAIN,aqqmusic.tc.qq.com,China`
