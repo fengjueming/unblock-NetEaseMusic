@@ -2,6 +2,7 @@
 
 #### 服务器信息</br>
     158.199.142.239 music.163.com
+    158.199.142.239:8889 #Socks5方式
 
 #### 使用方法
 
@@ -32,9 +33,10 @@ Nginx配置文件：
         proxy_set_header X-Real-IP #这里填入任意一个可用国内IP#;
         proxy_set_header X-Forwarded-For #这里填入任意一个可用国内IP#;  
     }
+现新增Socks5方式，将网易云音乐的代理设置为Socks5代理后，所有流量将经由服务器，满足*.163.com *.126.net 的数据包将经由中国服务器出去，其他数据包则会被遗弃，因此请勿使用全局方式。
 
 #### 备注
-如果你有一个位于国内的代理服务器，可以解决iOS设备上的网易云音乐/MOO音乐的区域限制。
+如果你有Quantumult/Surge/Shadowrocket，可以添加服务器和规则后解决iOS设备上的网易云音乐/MOO音乐的区域限制。
 
     //Netease  
     USER-AGENT,NeteaseMusic*,China  
